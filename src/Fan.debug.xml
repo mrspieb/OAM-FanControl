@@ -1,0 +1,996 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" xmlns="http://knx.org/xml/project/20" CreatedBy="OpenKNXproducer" ToolVersion="3.12.2.0">
+  <ManufacturerData>
+    <Manufacturer RefId="M-00FA">
+      <Catalog>
+        <CatalogSection Id="M-00FA_CS-OpenKNX" Name="OpenKNX" Number="OpenKNX" DefaultLanguage="de-DE">
+          <CatalogItem Id="M-00FA_H-0xAE86-1_HP-AE86-01-0000_CI-OpenKnxFanDev-1" Name="OpenKNX: Ventilation Fan KNX Adapter (Dev)" Number="1" ProductRefId="M-00FA_H-0xAE86-1_P-OpenKnxFanDev" Hardware2ProgramRefId="M-00FA_H-0xAE86-1_HP-AE86-01-0000" DefaultLanguage="de-DE" />
+        </CatalogSection>
+      </Catalog>
+      <ApplicationPrograms>
+        <!-- OpenKnxId="0xAE" ApplicationNumber="134" ApplicationVersion="1" ReplacesVersions="0" ApplicationRevision="0" FirmwareRevision="-1" -->
+        <ApplicationProgram Id="M-00FA_A-AE86-01-0000" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="FanControl-dev" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de-DE" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.0" ContextHelpFile="M-00FA_BG-AE.2F86.2F01-Help.5Fde.2Ezip" IconFile="M-00FA_BG-AE.2F86.2F01-Icons.2Ezip" IPConfig="Custom" ApplicationNumber="44678" ApplicationVersion="1" ReplacesVersions="0">
+          <Static>
+            <Code>
+              <RelativeSegment Id="M-00FA_A-AE86-01-0000_RS-04-00000" Name="Parameters" Offset="0" Size="127" LoadStateMachine="4" />
+            </Code>
+            <ParameterTypes>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ETS" Name="ETS">
+                <TypePicture RefId="M-00FA_BG-AE.2F86.2F01-ets.2Epng" HorizontalAlignment="Right" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-Text40Byte" Name="Text40Byte">
+                <TypeText SizeInBit="320" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-Text512Byte" Name="Text512Byte">
+                <TypeText SizeInBit="4096" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-DelayBase" Name="DelayBase">
+                <TypeRestriction Base="Value" SizeInBit="2">
+                  <Enumeration Text="Sekunde(n)" Value="0" Id="M-00FA_A-AE86-01-0000_PT-DelayBase_EN-0" />
+                  <Enumeration Text="Minute(n)" Value="1" Id="M-00FA_A-AE86-01-0000_PT-DelayBase_EN-1" />
+                  <Enumeration Text="Stunde(n)" Value="2" Id="M-00FA_A-AE86-01-0000_PT-DelayBase_EN-2" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-DelayBase10" Name="DelayBase10">
+                <TypeRestriction Base="Value" SizeInBit="2">
+                  <Enumeration Text="1/10  Sekunde(n)" Value="3" Id="M-00FA_A-AE86-01-0000_PT-DelayBase10_EN-3" />
+                  <Enumeration Text="Sekunde(n)" Value="0" Id="M-00FA_A-AE86-01-0000_PT-DelayBase10_EN-0" />
+                  <Enumeration Text="Minute(n)" Value="1" Id="M-00FA_A-AE86-01-0000_PT-DelayBase10_EN-1" />
+                  <Enumeration Text="Stunde(n)" Value="2" Id="M-00FA_A-AE86-01-0000_PT-DelayBase10_EN-2" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-DelayTime" Name="DelayTime">
+                <TypeNumber SizeInBit="14" Type="unsignedInt" minInclusive="0" maxInclusive="16000" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-DelayTimeMin1" Name="DelayTimeMin1">
+                <TypeNumber SizeInBit="14" Type="unsignedInt" minInclusive="1" maxInclusive="16000" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-CheckBox" Name="CheckBox">
+                <TypeNumber SizeInBit="1" Type="unsignedInt" minInclusive="0" maxInclusive="1" UIHint="CheckBox" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-OnOffYesNo" Name="OnOffYesNo">
+                <TypeRestriction Base="Value" SizeInBit="1">
+                  <Enumeration Text="Nein" Value="0" Id="M-00FA_A-AE86-01-0000_PT-OnOffYesNo_EN-0" />
+                  <Enumeration Text="Ja" Value="1" Id="M-00FA_A-AE86-01-0000_PT-OnOffYesNo_EN-1" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-OnOffYesNoInverted" Name="OnOffYesNoInverted">
+                <TypeRestriction Base="Value" SizeInBit="1">
+                  <Enumeration Text="Nein" Value="1" Id="M-00FA_A-AE86-01-0000_PT-OnOffYesNoInverted_EN-1" />
+                  <Enumeration Text="Ja" Value="0" Id="M-00FA_A-AE86-01-0000_PT-OnOffYesNoInverted_EN-0" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-KONumber" Name="KONumber">
+                <!-- Number of available KO is derived from current application -->
+                <TypeNumber SizeInBit="15" Type="unsignedInt" minInclusive="1" maxInclusive="35" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt1" Name="ValueDpt1">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="AUS (0)" Value="0" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt1_EN-0" />
+                  <Enumeration Text="EIN (1)" Value="1" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt1_EN-1" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2" Name="ValueDpt2">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="nicht genutzt" Value="4" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2_EN-4" />
+                  <Enumeration Text="normal AUS (00)" Value="0" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2_EN-0" />
+                  <Enumeration Text="normal EIN (01)" Value="1" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2_EN-1" />
+                  <Enumeration Text="priorität AUS (10)" Value="2" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2_EN-2" />
+                  <Enumeration Text="priorität EIN (11)" Value="3" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2_EN-3" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2Out" Name="ValueDpt2Out">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="normal AUS (00)" Value="0" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2Out_EN-0" />
+                  <Enumeration Text="normal EIN (01)" Value="1" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2Out_EN-1" />
+                  <Enumeration Text="priorität AUS (10)" Value="2" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2Out_EN-2" />
+                  <Enumeration Text="priorität EIN (11)" Value="3" Id="M-00FA_A-AE86-01-0000_PT-ValueDpt2Out_EN-3" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt5" Name="ValueDpt5">
+                <TypeNumber SizeInBit="8" Type="unsignedInt" minInclusive="0" maxInclusive="255" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt5001" Name="ValueDpt5001">
+                <TypeNumber SizeInBit="8" Type="unsignedInt" minInclusive="0" maxInclusive="100" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt6" Name="ValueDpt6">
+                <TypeNumber SizeInBit="8" Type="signedInt" minInclusive="-128" maxInclusive="127" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt7" Name="ValueDpt7">
+                <TypeNumber SizeInBit="16" Type="unsignedInt" minInclusive="0" maxInclusive="65535" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt8" Name="ValueDpt8">
+                <TypeNumber SizeInBit="16" Type="signedInt" minInclusive="-32768" maxInclusive="32767" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt9" Name="ValueDpt9">
+                <TypeFloat Encoding="IEEE-754 Single" minInclusive="-671088" maxInclusive="670760" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt12" Name="ValueDpt12">
+                <TypeNumber SizeInBit="32" Type="unsignedInt" minInclusive="0" maxInclusive="4294967295" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt13" Name="ValueDpt13">
+                <TypeNumber SizeInBit="32" Type="signedInt" minInclusive="-2147483648" maxInclusive="2147483647" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueDpt14" Name="ValueDpt14">
+                <TypeFloat Encoding="IEEE-754 Single" minInclusive="-1000000000000" maxInclusive="1000000000000" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueRGB" Name="ValueRGB">
+                <TypeNumber SizeInBit="32" Type="signedInt" minInclusive="0" maxInclusive="16777216" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ValueColor" Name="ValueColor">
+                <TypeColor Space="RGB" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-CombinedTimeDate" Name="CombinedTimeDate">
+                <TypeRestriction Base="Value" SizeInBit="1">
+                  <Enumeration Text="ein kombiniertes KO" Value="1" Id="M-00FA_A-AE86-01-0000_PT-CombinedTimeDate_EN-1" />
+                  <Enumeration Text="zwei getrennte KOs" Value="0" Id="M-00FA_A-AE86-01-0000_PT-CombinedTimeDate_EN-0" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-SummertimeAll" Name="SummertimeAll">
+                <TypeRestriction Base="Value" SizeInBit="2" UIHint="DropDown">
+                  <Enumeration Text="Kommunikationsobjekt 'Sommerzeit aktiv'" Value="0" Id="M-00FA_A-AE86-01-0000_PT-SummertimeAll_EN-0" />
+                  <Enumeration Text="Kombiniertes Datum/Zeit-KO (DPT 19)" Value="1" Id="M-00FA_A-AE86-01-0000_PT-SummertimeAll_EN-1" />
+                  <Enumeration Text="Interne Berechnung" Value="2" Id="M-00FA_A-AE86-01-0000_PT-SummertimeAll_EN-2" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-SummertimeDE" Name="SummertimeDE">
+                <TypeRestriction Base="Value" SizeInBit="2" UIHint="DropDown">
+                  <Enumeration Text="Kommunikationsobjekt 'Sommerzeit aktiv'" Value="0" Id="M-00FA_A-AE86-01-0000_PT-SummertimeDE_EN-0" />
+                  <Enumeration Text="Interne Berechnung" Value="2" Id="M-00FA_A-AE86-01-0000_PT-SummertimeDE_EN-2" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-SummertimeWorld" Name="SummertimeWorld">
+                <TypeRestriction Base="Value" SizeInBit="2" UIHint="DropDown">
+                  <Enumeration Text="Kommunikationsobjekt 'Sommerzeit aktiv'" Value="0" Id="M-00FA_A-AE86-01-0000_PT-SummertimeWorld_EN-0" />
+                  <Enumeration Text="Kombiniertes Datum/Zeit-KO (DPT 19)" Value="1" Id="M-00FA_A-AE86-01-0000_PT-SummertimeWorld_EN-1" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-SummertimeKO" Name="SummertimeKO">
+                <TypeRestriction Base="Value" SizeInBit="2" UIHint="DropDown">
+                  <Enumeration Text="Kommunikationsobjekt 'Sommerzeit aktiv'" Value="0" Id="M-00FA_A-AE86-01-0000_PT-SummertimeKO_EN-0" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-TimezoneCustom" Name="TimezoneCustom">
+                <TypeText SizeInBit="504" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-Timezone" Name="Timezone">
+                <TypeRestriction Base="Value" SizeInBit="5">
+                  <Enumeration Text="Amsterdam, Berlin, Bern, Rom, Wien (+1 Stunde)" Value="1" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-1" />
+                  <Enumeration Text="Benutzerdefiniert" Value="31" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-31" />
+                  <Enumeration Text="UTC -11 Stunden" Value="27" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-27" />
+                  <Enumeration Text="UTC -10 Stunden" Value="26" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-26" />
+                  <Enumeration Text="UTC -9 Stunden" Value="25" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-25" />
+                  <Enumeration Text="UTC -8 Stunden" Value="24" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-24" />
+                  <Enumeration Text="UTC -7 Stunden" Value="23" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-23" />
+                  <Enumeration Text="UTC -6 Stunden" Value="22" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-22" />
+                  <Enumeration Text="UTC -5 Stunden" Value="21" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-21" />
+                  <Enumeration Text="UTC -4 Stunden" Value="20" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-20" />
+                  <Enumeration Text="UTC -3 Stunden" Value="19" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-19" />
+                  <Enumeration Text="UTC -2 Stunden" Value="18" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-18" />
+                  <Enumeration Text="UTC -1 Stunde" Value="17" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-17" />
+                  <Enumeration Text="UTC +0 Stunden" Value="0" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-0" />
+                  <Enumeration Text="UTC +1 Stunden" Value="28" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-28" />
+                  <Enumeration Text="UTC +2 Stunden" Value="2" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-2" />
+                  <Enumeration Text="UTC +3 Stunden" Value="3" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-3" />
+                  <Enumeration Text="UTC +4 Stunden" Value="4" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-4" />
+                  <Enumeration Text="UTC +5 Stunden" Value="5" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-5" />
+                  <Enumeration Text="UTC +6 Stunden" Value="6" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-6" />
+                  <Enumeration Text="UTC +7 Stunden" Value="7" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-7" />
+                  <Enumeration Text="UTC +8 Stunden" Value="8" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-8" />
+                  <Enumeration Text="UTC +9 Stunden" Value="9" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-9" />
+                  <Enumeration Text="UTC +10 Stunden" Value="10" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-10" />
+                  <Enumeration Text="UTC +11 Stunden" Value="11" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-11" />
+                  <Enumeration Text="UTC +12 Stunden" Value="12" Id="M-00FA_A-AE86-01-0000_PT-Timezone_EN-12" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-Latitude" Name="Latitude">
+                <TypeFloat Encoding="IEEE-754 Single" minInclusive="-90" maxInclusive="90" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-Longitude" Name="Longitude">
+                <TypeFloat Encoding="IEEE-754 Single" minInclusive="-180" maxInclusive="180" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-PeriodicSave" Name="PeriodicSave">
+                <TypeRestriction Base="Value" SizeInBit="8" UIHint="DropDown">
+                  <Enumeration Text="Deaktiviert" Value="0" Id="M-00FA_A-AE86-01-0000_PT-PeriodicSave_EN-0" />
+                  <Enumeration Text="Jede Stunde" Value="1" Id="M-00FA_A-AE86-01-0000_PT-PeriodicSave_EN-1" />
+                  <Enumeration Text="Alle 2 Stunden" Value="2" Id="M-00FA_A-AE86-01-0000_PT-PeriodicSave_EN-2" />
+                  <Enumeration Text="Alle 4 Stunden" Value="4" Id="M-00FA_A-AE86-01-0000_PT-PeriodicSave_EN-4" />
+                  <Enumeration Text="Alle 6 Stunden" Value="6" Id="M-00FA_A-AE86-01-0000_PT-PeriodicSave_EN-6" />
+                  <Enumeration Text="Täglich" Value="24" Id="M-00FA_A-AE86-01-0000_PT-PeriodicSave_EN-24" />
+                  <Enumeration Text="Wöchentlich" Value="168" Id="M-00FA_A-AE86-01-0000_PT-PeriodicSave_EN-168" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-ManualSave" Name="ManualSave">
+                <TypeRestriction Base="Value" SizeInBit="3" UIHint="DropDown">
+                  <Enumeration Text="Deaktiviert" Value="0" Id="M-00FA_A-AE86-01-0000_PT-ManualSave_EN-0" />
+                  <Enumeration Text="Aktiv mit 5 min. Schreibschutz" Value="1" Id="M-00FA_A-AE86-01-0000_PT-ManualSave_EN-1" />
+                  <Enumeration Text="Aktiv mit 15 min. Schreibschutz" Value="2" Id="M-00FA_A-AE86-01-0000_PT-ManualSave_EN-2" />
+                  <Enumeration Text="Aktiv mit 60 min. Schreibschutz" Value="3" Id="M-00FA_A-AE86-01-0000_PT-ManualSave_EN-3" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-MaxHumidity" Name="MaxHumidity">
+                <TypeNumber SizeInBit="8" Type="signedInt" minInclusive="0" maxInclusive="100" />
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-OpMode" Name="OpMode">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="Manuell" Value="1" Id="M-00FA_A-AE86-01-0000_PT-OpMode_EN-0" />
+                  <Enumeration Text="Automatisch" Value="2" Id="M-00FA_A-AE86-01-0000_PT-OpMode_EN-1" />
+                  <Enumeration Text="Kommunikationsobjekt" Value="3" Id="M-00FA_A-AE86-01-0000_PT-OpMode_EN-2" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-AutoMode" Name="AutoMode">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="Grenzwert" Value="1" Id="M-00FA_A-AE86-01-0000_PT-AutoMode_EN-0" />
+                  <Enumeration Text="Adaptiv" Value="2" Id="M-00FA_A-AE86-01-0000_PT-AutoMode_EN-1" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-VentMode" Name="VentMode">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="Wärmerückgewinnung" Value="1" Id="M-00FA_A-AE86-01-0000_PT-VentMode_EN-0" />
+                  <Enumeration Text="Zuluft" Value="2" Id="M-00FA_A-AE86-01-0000_PT-VentMode_EN-1" />
+                  <Enumeration Text="Abluft" Value="3" Id="M-00FA_A-AE86-01-0000_PT-VentMode_EN-2" />
+                  <Enumeration Text="Kommunikationsobjekt" Value="4" Id="M-00FA_A-AE86-01-0000_PT-VentMode_EN-3" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-HumSensMode" Name="HumSensMode">
+                <TypeRestriction Base="Value" SizeInBit="8">
+                  <Enumeration Text="Relative" Value="1" Id="M-00FA_A-AE86-01-0000_PT-HumSensMode_EN-0" />
+                  <Enumeration Text="Absolut" Value="2" Id="M-00FA_A-AE86-01-0000_PT-HumSensMode_EN-1" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-TimerSelection" Name="TimerSelection">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="5 Minuten" Value="300" Id="M-00FA_A-AE86-01-0000_PT-TimerSelection_EN-1" />
+                  <Enumeration Text="10 Minuten" Value="600" Id="M-00FA_A-AE86-01-0000_PT-TimerSelection_EN-2" />
+                  <Enumeration Text="15 Minuten" Value="900" Id="M-00FA_A-AE86-01-0000_PT-TimerSelection_EN-3" />
+                  <Enumeration Text="30 Minuten" Value="1800" Id="M-00FA_A-AE86-01-0000_PT-TimerSelection_EN-4" />
+                  <Enumeration Text="60 Minuten" Value="3600" Id="M-00FA_A-AE86-01-0000_PT-TimerSelection_EN-5" />
+                  <Enumeration Text="2 Stunden" Value="7200" Id="M-00FA_A-AE86-01-0000_PT-TimerSelection_EN-6" />
+                  <Enumeration Text="3 Stunden" Value="10800" Id="M-00FA_A-AE86-01-0000_PT-TimerSelection_EN-7" />
+                  <Enumeration Text="4 Stunden" Value="14400" Id="M-00FA_A-AE86-01-0000_PT-TimerSelection_EN-8" />
+                  <Enumeration Text="5 Stunden" Value="18000" Id="M-00FA_A-AE86-01-0000_PT-TimerSelection_EN-9" />
+                </TypeRestriction>
+              </ParameterType>
+              <ParameterType Id="M-00FA_A-AE86-01-0000_PT-Percentage" Name="Percentage">
+                <TypeNumber SizeInBit="8" Type="signedInt" minInclusive="0" maxInclusive="100" />
+              </ParameterType>
+            </ParameterTypes>
+            <Parameters>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-1000001" Name="BASE_ETS" ParameterType="M-00FA_A-AE86-01-0000_PT-ETS" Text="ETS" Access="Read" Value="" />
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-1000099" Name="BASE_SelectHelper" ParameterType="M-00FA_A-AE86-01-0000_PT-CheckBox" Text="" Value="0" Access="None" />
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-1000011" Name="BASE_ExtendedSave" ParameterType="M-00FA_A-AE86-01-0000_PT-OnOffYesNo" Text="Erweitertes Speichern" Value="0" />
+              <Union SizeInBit="32">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="0" BitOffset="0" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000002" Name="BASE_StartupDelayBase" ParameterType="M-00FA_A-AE86-01-0000_PT-DelayBase" Offset="0" BitOffset="0" Text="Zeitbasis" Value="0" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000003" Name="BASE_StartupDelayTime" ParameterType="M-00FA_A-AE86-01-0000_PT-DelayTimeMin1" Offset="0" BitOffset="2" Text="Zeit" Value="1" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000004" Name="BASE_HeartbeatDelayBase" ParameterType="M-00FA_A-AE86-01-0000_PT-DelayBase" Offset="2" BitOffset="0" Text="Zeitbasis" Value="0" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000005" Name="BASE_HeartbeatDelayTime" ParameterType="M-00FA_A-AE86-01-0000_PT-DelayTime" Offset="2" BitOffset="2" Text="Zeit" Value="300" />
+              </Union>
+              <Union SizeInBit="520">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="4" BitOffset="0" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000144" Name="BASE_Timezone" ParameterType="M-00FA_A-AE86-01-0000_PT-Timezone" Offset="0" BitOffset="0" Text="Zeitzone" Value="1" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000156" Name="BASE_CombinedTimeDate" ParameterType="M-00FA_A-AE86-01-0000_PT-CombinedTimeDate" Offset="0" BitOffset="5" Text="Empfangen über" Value="1" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000159" Name="BASE_SummertimeAll" ParameterType="M-00FA_A-AE86-01-0000_PT-SummertimeAll" Offset="0" BitOffset="6" Text="Sommerzeit ermitteln durch" Value="2" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000160" Name="BASE_SummertimeDE" ParameterType="M-00FA_A-AE86-01-0000_PT-SummertimeDE" Offset="0" BitOffset="6" Text="Sommerzeit ermitteln durch" Value="2" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000161" Name="BASE_SummertimeWorld" ParameterType="M-00FA_A-AE86-01-0000_PT-SummertimeWorld" Offset="0" BitOffset="6" Text="Sommerzeit ermitteln durch" Value="0" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000162" Name="BASE_SummertimeKO" ParameterType="M-00FA_A-AE86-01-0000_PT-SummertimeKO" Offset="0" BitOffset="6" Text="Sommerzeit ermitteln durch" Value="0" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000175" Name="BASE_TimezoneCustom" ParameterType="M-00FA_A-AE86-01-0000_PT-TimezoneCustom" Offset="1" BitOffset="0" Text="POSIX TZ-String" Value="CET-1CEST,M3.5.0/2:00:00,M10.5.0/3:00:00" />
+                <!-- ^^^ 63 Characters + 0 terminator = 64 bytes ^^^ -->
+              </Union>
+              <Union SizeInBit="64">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="69" BitOffset="0" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000142" Name="BASE_Latitude" ParameterType="M-00FA_A-AE86-01-0000_PT-Latitude" Offset="0" BitOffset="0" Text="Breitengrad" Value="5.011537700000000E+001" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000143" Name="BASE_Longitude" ParameterType="M-00FA_A-AE86-01-0000_PT-Longitude" Offset="4" BitOffset="0" Text="Längengrad" Value="8.683764000000000E+000" />
+              </Union>
+              <Union SizeInBit="256">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="78" BitOffset="0" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000146" Name="BASE_Diagnose" ParameterType="M-00FA_A-AE86-01-0000_PT-OnOffYesNo" Offset="0" BitOffset="0" Text="Diagnoseobjekt anzeigen" Value="0" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000147" Name="BASE_Watchdog" ParameterType="M-00FA_A-AE86-01-0000_PT-OnOffYesNo" Offset="0" BitOffset="1" Text="Watchdog aktivieren" Value="1" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000034" Name="BASE_ReadTimeDate" ParameterType="M-00FA_A-AE86-01-0000_PT-OnOffYesNo" Offset="0" BitOffset="2" Text="Bei Neustart vom Bus lesen" Value="1" />
+                <!-- The follwing 2 IDs are used by logic module for update compatibility -->
+                <!-- <Parameter Id="%AID%_UP-%TT%00035" Name="BuzzerInstalled" ParameterType="%AID%_PT-CheckBox" Offset="0" BitOffset="1" Text="Akustischer Signalgeber vorhanden (Buzzer)?" Value="0" /> -->
+                <!-- <Parameter Id="%AID%_UP-%TT%00036" Name="LedInstalled" ParameterType="%AID%_PT-CheckBox" Offset="0" BitOffset="2" Text="Optischer Signalgeber vorhanden (RGB-LED)?" Value="0" /> -->
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000037" Name="BASE_HeartbeatExtended" ParameterType="M-00FA_A-AE86-01-0000_PT-OnOffYesNo" Offset="0" BitOffset="3" Text="Erweitertes &quot;In Betrieb&quot;" Value="0" />
+                <!-- Hidden Options for external time control -->
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000006" Name="BASE_InternalTime" ParameterType="M-00FA_A-AE86-01-0000_PT-OnOffYesNo" Offset="0" BitOffset="4" Text="InternalTime" Access="None" Value="0" />
+                <!-- 3 Bit free  -->
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000091" Name="BASE_ManualSave" ParameterType="M-00FA_A-AE86-01-0000_PT-ManualSave" Offset="0" BitOffset="5" Text="Manuelles speichern" Value="3" />
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000090" Name="BASE_PeriodicSave" ParameterType="M-00FA_A-AE86-01-0000_PT-PeriodicSave" Offset="1" BitOffset="0" Text="Zyklisches speichern" Value="0" />
+                <!--
+                
+                  Reserved for new parameters
+                
+                -->
+                <!-- Set dummy for last Byte to reserve Space-->
+                <Parameter Id="M-00FA_A-AE86-01-0000_UP-1000098" Name="BASE_Dummy" ParameterType="M-00FA_A-AE86-01-0000_PT-ValueDpt5" Offset="31" BitOffset="0" Text="" Value="0" />
+              </Union>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9900001" Name="FAN_FanOne" ParameterType="M-00FA_A-AE86-01-0000_PT-CheckBox" Text="Lüfter 1" Value="1">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="110" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9900002" Name="FAN_FanTwo" ParameterType="M-00FA_A-AE86-01-0000_PT-CheckBox" Text="Lüfter 2" Value="1">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="110" BitOffset="1" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9900003" Name="FAN_Fan1Text" ParameterType="M-00FA_A-AE86-01-0000_PT-Text40Byte" Text="Bezeichnung des 1. Lüfters" Value="Lüfter" />
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9900004" Name="FAN_Fan2Text" ParameterType="M-00FA_A-AE86-01-0000_PT-Text40Byte" Text="Bezeichnung des 2. Lüfters" Value="Lüfter" />
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9901001" Name="FAN_CH1_OpMode" ParameterType="M-00FA_A-AE86-01-0000_PT-OpMode" Text="Betriebsmodus" Value="1">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="112" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9901002" Name="FAN_CH1_MaxHumidity" ParameterType="M-00FA_A-AE86-01-0000_PT-Percentage" Text="Max. Luftfeuchte für Automatik" Value="75">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="113" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9901003" Name="FAN_CH1_AutoMode" ParameterType="M-00FA_A-AE86-01-0000_PT-AutoMode" Text="Steuerungsmodus" Value="1">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="114" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9901004" Name="FAN_CH1_VentMode" ParameterType="M-00FA_A-AE86-01-0000_PT-VentMode" Text="Lüftungsmodus" Value="1">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="115" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9901005" Name="FAN_CH1_HumSensMode" ParameterType="M-00FA_A-AE86-01-0000_PT-HumSensMode" Text="Luftfeuchtemessung" Value="1">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="116" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9901006" Name="FAN_CH1_TimerSelection" ParameterType="M-00FA_A-AE86-01-0000_PT-TimerSelection" Text="Laufzeitauswahl" Value="300">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="117" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9902001" Name="FAN_CH2_OpMode" ParameterType="M-00FA_A-AE86-01-0000_PT-OpMode" Text="Betriebsmodus" Value="1">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="120" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9902002" Name="FAN_CH2_MaxHumidity" ParameterType="M-00FA_A-AE86-01-0000_PT-Percentage" Text="Max. Luftfeuchte für Automatik" Value="75">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="121" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9902003" Name="FAN_CH2_AutoMode" ParameterType="M-00FA_A-AE86-01-0000_PT-AutoMode" Text="Steuerungsmodus" Value="1">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="122" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9902004" Name="FAN_CH2_VentMode" ParameterType="M-00FA_A-AE86-01-0000_PT-VentMode" Text="Lüftungsmodus" Value="1">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="123" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9902005" Name="FAN_CH2_HumSensMode" ParameterType="M-00FA_A-AE86-01-0000_PT-HumSensMode" Text="Luftfeuchtemessung" Value="1">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="124" BitOffset="0" />
+              </Parameter>
+              <Parameter Id="M-00FA_A-AE86-01-0000_P-9902006" Name="FAN_CH2_TimerSelection" ParameterType="M-00FA_A-AE86-01-0000_PT-TimerSelection" Text="Laufzeitauswahl" Value="300">
+                <Memory CodeSegment="M-00FA_A-AE86-01-0000_RS-04-00000" Offset="125" BitOffset="0" />
+              </Parameter>
+            </Parameters>
+            <ParameterRefs>
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-1000001_R-100000101" RefId="M-00FA_A-AE86-01-0000_P-1000001" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-1000011_R-100001101" RefId="M-00FA_A-AE86-01-0000_P-1000011" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000002_R-100000201" RefId="M-00FA_A-AE86-01-0000_UP-1000002" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000003_R-100000301" RefId="M-00FA_A-AE86-01-0000_UP-1000003" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000004_R-100000401" RefId="M-00FA_A-AE86-01-0000_UP-1000004" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000005_R-100000501" RefId="M-00FA_A-AE86-01-0000_UP-1000005" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000006_R-100000601" RefId="M-00FA_A-AE86-01-0000_UP-1000006" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000034_R-100003401" RefId="M-00FA_A-AE86-01-0000_UP-1000034" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000037_R-100003701" RefId="M-00FA_A-AE86-01-0000_UP-1000037" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000142_R-100014201" RefId="M-00FA_A-AE86-01-0000_UP-1000142" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000143_R-100014301" RefId="M-00FA_A-AE86-01-0000_UP-1000143" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000144_R-100014401" RefId="M-00FA_A-AE86-01-0000_UP-1000144" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000146_R-100014601" RefId="M-00FA_A-AE86-01-0000_UP-1000146" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000147_R-100014701" RefId="M-00FA_A-AE86-01-0000_UP-1000147" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000156_R-100015601" RefId="M-00FA_A-AE86-01-0000_UP-1000156" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000159_R-100015901" RefId="M-00FA_A-AE86-01-0000_UP-1000159" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000160_R-100016001" RefId="M-00FA_A-AE86-01-0000_UP-1000160" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000161_R-100016101" RefId="M-00FA_A-AE86-01-0000_UP-1000161" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000162_R-100016201" RefId="M-00FA_A-AE86-01-0000_UP-1000162" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000175_R-100017501" RefId="M-00FA_A-AE86-01-0000_UP-1000175" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000090_R-100009001" RefId="M-00FA_A-AE86-01-0000_UP-1000090" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_UP-1000091_R-100009101" RefId="M-00FA_A-AE86-01-0000_UP-1000091" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-1000099_R-100009901" RefId="M-00FA_A-AE86-01-0000_P-1000099" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9900001_R-990000101" RefId="M-00FA_A-AE86-01-0000_P-9900001" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9900002_R-990000201" RefId="M-00FA_A-AE86-01-0000_P-9900002" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9900003_R-990000301" RefId="M-00FA_A-AE86-01-0000_P-9900003" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9900004_R-990000401" RefId="M-00FA_A-AE86-01-0000_P-9900004" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9901001_R-990100101" RefId="M-00FA_A-AE86-01-0000_P-9901001" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9901002_R-990100201" RefId="M-00FA_A-AE86-01-0000_P-9901002" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9901003_R-990100301" RefId="M-00FA_A-AE86-01-0000_P-9901003" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9901004_R-990100401" RefId="M-00FA_A-AE86-01-0000_P-9901004" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9901005_R-990100501" RefId="M-00FA_A-AE86-01-0000_P-9901005" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9901006_R-990100601" RefId="M-00FA_A-AE86-01-0000_P-9901006" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9902001_R-990200101" RefId="M-00FA_A-AE86-01-0000_P-9902001" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9902002_R-990200201" RefId="M-00FA_A-AE86-01-0000_P-9902002" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9902003_R-990200301" RefId="M-00FA_A-AE86-01-0000_P-9902003" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9902004_R-990200401" RefId="M-00FA_A-AE86-01-0000_P-9902004" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9902005_R-990200501" RefId="M-00FA_A-AE86-01-0000_P-9902005" />
+              <ParameterRef Id="M-00FA_A-AE86-01-0000_P-9902006_R-990200601" RefId="M-00FA_A-AE86-01-0000_P-9902006" />
+            </ParameterRefs>
+            <ComObjectTable>
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-1" Name="BASE_Heartbeat" Text="In Betrieb" Number="1" FunctionText="Zyklisch" ObjectSize="1 Byte" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-5-5" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-2" Name="BASE_Time" Text="Uhrzeit" Number="2" FunctionText="Eingang" ObjectSize="3 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-10-1" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-3" Name="BASE_Date" Text="Datum" Number="3" FunctionText="Eingang" ObjectSize="3 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-11-1" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-4" Name="BASE_DateTime" Text="Uhrzeit/Datum" Number="4" FunctionText="Eingang" ObjectSize="8 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-19-1" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-5" Name="BASE_IsSummertime" Text="Sommerzeit aktiv" Number="5" FunctionText="Eingang" ObjectSize="1 Bit" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-1" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-6" Name="BASE_ManualSave" Text="Speichern" Number="6" FunctionText="Eingang" ObjectSize="1 Bit" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-17" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-7" Name="BASE_Diagnose" Text="Diagnose" Number="7" FunctionText="Diagnoseobjekt" ObjectSize="14 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-16-1" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-12" Name="FAN_CH1_HumidityInside" Text="{{0:Eingang}}" Number="12" FunctionText="Luftfeuchtigkeit innen Lüfter 1" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-9-7" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-13" Name="FAN_CH1_TemperatureInside" Text="{{0:Eingang}}" Number="13" FunctionText="Temperatur innen Lüfter" ObjectSize="2 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-9-1" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-14" Name="FAN_CH1_HumidityOutside" Text="{{0:Eingang}}" Number="14" FunctionText="Luftfeuchtigkeit außen Lüfter" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-9-7" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-15" Name="FAN_CH1_TemperatureOutside" Text="{{0:Eingang}}" Number="15" FunctionText="Temperatur außen Lüfter" ObjectSize="2 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-9-1" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-16" Name="FAN_CH1_Level" Text="{{0:Eingang}}" Number="16" FunctionText="Stufe" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-17" Name="FAN_CH1_OpMode" Text="{{0:Eingang}}" Number="17" FunctionText="Betriebsmodus" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-18" Name="FAN_CH1_VentMode" Text="{{0:Eingang}}" Number="18" FunctionText="Lüftungsmodus" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-19" Name="FAN_CH1_TimerSelection" Text="{{0:Eingang}}" Number="19" FunctionText="Timer" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-20" Name="FAN_CH1_LevelFeedback" Text="{{0:Ausgang}}" Number="20" FunctionText="Stufe Rückmeldung" ObjectSize="1 Byte" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-21" Name="FAN_CH1_OpModeFeedback" Text="{{0:Ausgang}}" Number="21" FunctionText="Betriebsmodus Rückmeldung" ObjectSize="1 Byte" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-22" Name="FAN_CH1_VentModeFeedback" Text="{{0:Ausgang}}" Number="22" FunctionText="Lüftungsmodus Rückmeldung" ObjectSize="1 Byte" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-23" Name="FAN_CH1_TimerFeedback" Text="{{0:Ausgang}}" Number="23" FunctionText="Timer Rückmeldung" ObjectSize="1 Bit" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-11" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-24" Name="FAN_CH2_HumidityInside" Text="{{0:Eingang}}" Number="24" FunctionText="Luftfeuchtigkeit innen Lüfter 2" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-9-7" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-25" Name="FAN_CH2_TemperatureInside" Text="{{0:Eingang}}" Number="25" FunctionText="Temperatur innen Lüfter" ObjectSize="2 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-9-1" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-26" Name="FAN_CH2_HumidityOutside" Text="{{0:Eingang}}" Number="26" FunctionText="Luftfeuchtigkeit außen Lüfter" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-9-7" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-27" Name="FAN_CH2_TemperatureOutside" Text="{{0:Eingang}}" Number="27" FunctionText="Temperatur außen Lüfter" ObjectSize="2 Bytes" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-9-1" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-28" Name="FAN_CH2_Level" Text="{{0:Eingang}}" Number="28" FunctionText="Stufe" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-29" Name="FAN_CH2_OpMode" Text="{{0:Eingang}}" Number="29" FunctionText="Betriebsmodus" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-30" Name="FAN_CH2_VentMode" Text="{{0:Eingang}}" Number="30" FunctionText="Lüftungsmodus" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-31" Name="FAN_CH2_TimerSelection" Text="{{0:Eingang}}" Number="31" FunctionText="Timer" ObjectSize="1 Byte" ReadFlag="Disabled" WriteFlag="Enabled" CommunicationFlag="Enabled" TransmitFlag="Disabled" UpdateFlag="Enabled" ReadOnInitFlag="Enabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-32" Name="FAN_CH2_LevelFeedback" Text="{{0:Ausgang}}" Number="32" FunctionText="Stufe Rückmeldung" ObjectSize="1 Byte" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-33" Name="FAN_CH2_OpModeFeedback" Text="{{0:Ausgang}}" Number="33" FunctionText="Betriebsmodus Rückmeldung" ObjectSize="1 Byte" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-34" Name="FAN_CH2_VentModeFeedback" Text="{{0:Ausgang}}" Number="34" FunctionText="Lüftungsmodus Rückmeldung" ObjectSize="1 Byte" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-6-10" />
+              <ComObject Id="M-00FA_A-AE86-01-0000_O-35" Name="FAN_CH2_TimerFeedback" Text="{{0:Ausgang}}" Number="35" FunctionText="Timer Rückmeldung" ObjectSize="1 Bit" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-11" />
+            </ComObjectTable>
+            <ComObjectRefs>
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-1_R-100000101" RefId="M-00FA_A-AE86-01-0000_O-1" ObjectSize="1 Bit" DatapointType="DPST-1-2" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-1_R-100000102" RefId="M-00FA_A-AE86-01-0000_O-1" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-2_R-100000201" RefId="M-00FA_A-AE86-01-0000_O-2" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-2_R-100000203" RefId="M-00FA_A-AE86-01-0000_O-2" FunctionText="Ausgang" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-3_R-100000301" RefId="M-00FA_A-AE86-01-0000_O-3" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-3_R-100000303" RefId="M-00FA_A-AE86-01-0000_O-3" FunctionText="Ausgang" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-7_R-100000701" RefId="M-00FA_A-AE86-01-0000_O-7" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-5_R-100001001" RefId="M-00FA_A-AE86-01-0000_O-5" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-5_R-100001003" RefId="M-00FA_A-AE86-01-0000_O-5" FunctionText="Ausgang" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-6_R-100001101" RefId="M-00FA_A-AE86-01-0000_O-6" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-1000002_R-100000202" RefId="M-00FA_A-AE86-01-0000_O-4" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-4_R-100001203" RefId="M-00FA_A-AE86-01-0000_O-4" FunctionText="Ausgang" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-12_R-990100101" RefId="M-00FA_A-AE86-01-0000_O-12" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-13_R-990100201" RefId="M-00FA_A-AE86-01-0000_O-13" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-14_R-990100301" RefId="M-00FA_A-AE86-01-0000_O-14" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-15_R-990100401" RefId="M-00FA_A-AE86-01-0000_O-15" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-16_R-990100501" RefId="M-00FA_A-AE86-01-0000_O-16" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-17_R-990100601" RefId="M-00FA_A-AE86-01-0000_O-17" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-18_R-990100701" RefId="M-00FA_A-AE86-01-0000_O-18" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-19_R-990100801" RefId="M-00FA_A-AE86-01-0000_O-19" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-20_R-990100901" RefId="M-00FA_A-AE86-01-0000_O-20" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-21_R-990101001" RefId="M-00FA_A-AE86-01-0000_O-21" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-22_R-990101101" RefId="M-00FA_A-AE86-01-0000_O-22" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-23_R-990101201" RefId="M-00FA_A-AE86-01-0000_O-23" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-24_R-990200101" RefId="M-00FA_A-AE86-01-0000_O-24" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-25_R-990200201" RefId="M-00FA_A-AE86-01-0000_O-25" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-26_R-990200301" RefId="M-00FA_A-AE86-01-0000_O-26" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-27_R-990200401" RefId="M-00FA_A-AE86-01-0000_O-27" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-28_R-990200501" RefId="M-00FA_A-AE86-01-0000_O-28" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-29_R-990200601" RefId="M-00FA_A-AE86-01-0000_O-29" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-30_R-990200701" RefId="M-00FA_A-AE86-01-0000_O-30" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-31_R-990200801" RefId="M-00FA_A-AE86-01-0000_O-31" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-32_R-990200901" RefId="M-00FA_A-AE86-01-0000_O-32" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-33_R-990201001" RefId="M-00FA_A-AE86-01-0000_O-33" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-34_R-990201101" RefId="M-00FA_A-AE86-01-0000_O-34" />
+              <ComObjectRef Id="M-00FA_A-AE86-01-0000_O-35_R-990201201" RefId="M-00FA_A-AE86-01-0000_O-35" />
+            </ComObjectRefs>
+            <AddressTable MaxEntries="2047" />
+            <AssociationTable MaxEntries="2047" />
+            <LoadProcedures>
+              <LoadProcedure MergeId="1">
+                <LdCtrlCompareProp InlineData="0000AE860100" ObjIdx="0" PropId="78">
+                  <OnError Cause="CompareMismatch" MessageRef="M-00FA_A-AE86-01-0000_M-1" />
+                </LdCtrlCompareProp>
+              </LoadProcedure>
+              <LoadProcedure MergeId="2">
+                <LdCtrlRelSegment LsmIdx="4" Size="127" Mode="1" Fill="0" AppliesTo="full" />
+                <LdCtrlRelSegment LsmIdx="4" Size="127" Mode="0" Fill="0" AppliesTo="par" />
+              </LoadProcedure>
+              <LoadProcedure MergeId="4">
+                <LdCtrlWriteRelMem ObjIdx="4" Offset="0" Size="127" Verify="true" AppliesTo="full,par" />
+              </LoadProcedure>
+              <LoadProcedure MergeId="7">
+                <LdCtrlLoadImageProp ObjIdx="4" PropId="27" />
+              </LoadProcedure>
+            </LoadProcedures>
+            <Extension>
+              <Baggage RefId="M-00FA_BG-AE.2F86.2F01-ets.2Epng" />
+              <Baggage RefId="M-00FA_BG-AE.2F86.2F01-Help.5Fde.2Ezip" />
+              <Baggage RefId="M-00FA_BG-AE.2F86.2F01-Icons.2Ezip" />
+            </Extension>
+            <Messages>
+              <Message Id="M-00FA_A-AE86-01-0000_M-1" Name="VersionMismatch" Text="Diese Applikation und die installierte Firmware passen nicht zusammen." />
+            </Messages>
+            <Script>
+function newline(device, online, progress, context) {
+    // input contains c++ like control chars (\n,\\)
+    var text = device.getParameterByName(context.textbox);
+    var replaced = text.value.split("\\n").join("\n");
+    text.value = replaced;
+}
+</Script>
+            <Options TextParameterEncoding="iso-8859-15" />
+          </Static>
+          <ModuleDefs>
+            <ModuleDef Id="M-00FA_A-AE86-01-0000_MD-1000001" Name="BASE_KommentarModule">
+              <!-- <Arguments>
+                <Argument Id="%AID%_MD-%TT%00001_A-1" Name="argHelpContext" Type="Text" />
+              </Arguments> -->
+              <Static>
+                <Parameters>
+                  <Parameter Id="M-00FA_A-AE86-01-0000_MD-1000001_P-1000001" Name="BASE_Kommentar-1000001" ParameterType="M-00FA_A-AE86-01-0000_PT-Text512Byte" Text="Kommentar" Value="" />
+                </Parameters>
+                <ParameterRefs>
+                  <ParameterRef Id="M-00FA_A-AE86-01-0000_MD-1000001_P-1000001_R-100000101" RefId="M-00FA_A-AE86-01-0000_MD-1000001_P-1000001" />
+                </ParameterRefs>
+              </Static>
+              <Dynamic>
+                <ParameterBlock Id="M-00FA_A-AE86-01-0000_MD-1000001_PB-1" Inline="true">
+                  <!-- ParameterRefRef BASE_Kommentar-1000001 'Kommentar'-->
+                  <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_MD-1000001_P-1000001_R-100000101" HelpContext="BASE-Comment" />
+                  <Button Id="M-00FA_A-AE86-01-0000_MD-1000001_B-1000001" Text="Alle '\n' im Text durch neue Zeile(n) ersetzen" EventHandler="newline" EventHandlerParameters="{ &quot;textbox&quot;:&quot;BASE_Kommentar-1000001&quot; }" />
+                </ParameterBlock>
+              </Dynamic>
+            </ModuleDef>
+          </ModuleDefs>
+          <Dynamic>
+            <Channel Id="M-00FA_A-AE86-01-0000_CH-BASE" Number="BASE" Name="BASE_Main" Text="OpenKNX" Icon="openknx" HelpContext="BASE-OpenKNX">
+              <ParameterBlock Id="M-00FA_A-AE86-01-0000_PB-2" Name="BASE_Basic" Text="Allgemein" Icon="cog-outline" HelpContext="BASE-OpenKNX">
+                <!-- Hidden -->
+                <!-- ParameterRefRef BASE_InternalTime 'InternalTime'-->
+                <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000006_R-100000601" />
+                <!-- ParameterRefRef BASE_SelectHelper ''-->
+                <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-1000099_R-100009901" />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-1" Text="Allgemein" UIHint="Headline" />
+                <!-- Startup Delay pattern -->
+                <ParameterBlock Id="M-00FA_A-AE86-01-0000_PB-3" Name="BASE_StartupDelayCycle" Inline="true" Layout="Grid" HelpContext="BASE-Startup">
+                  <Rows>
+                    <Row Id="M-00FA_A-AE86-01-0000_PB-3_R-1" Name="BASE_Row1" />
+                  </Rows>
+                  <Columns>
+                    <Column Id="M-00FA_A-AE86-01-0000_PB-3_C-1" Name="BASE_Col1" Width="45%" />
+                    <Column Id="M-00FA_A-AE86-01-0000_PB-3_C-2" Name="BASE_Col2" Width="15%" />
+                    <Column Id="M-00FA_A-AE86-01-0000_PB-3_C-3" Name="BASE_Col3" Width="20%" />
+                  </Columns>
+                  <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-2" Text="  Startverzögerung" Cell="1,1" />
+                  <!-- ParameterRefRef BASE_StartupDelayTime 'Zeit'-->
+                  <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000003_R-100000301" Cell="1,2" IndentLevel="1" />
+                  <!-- ParameterRefRef BASE_StartupDelayBase 'Zeitbasis'-->
+                  <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000002_R-100000201" Cell="1,3" IndentLevel="1" />
+                </ParameterBlock>
+                <!-- Heartbeat Delay pattern -->
+                <ParameterBlock Id="M-00FA_A-AE86-01-0000_PB-4" Name="BASE_HeartbeatSendCycle" Inline="true" Layout="Grid" HelpContext="BASE-Heartbeat">
+                  <Rows>
+                    <Row Id="M-00FA_A-AE86-01-0000_PB-4_R-1" Name="BASE_Row1" />
+                  </Rows>
+                  <Columns>
+                    <Column Id="M-00FA_A-AE86-01-0000_PB-4_C-1" Name="BASE_Col1" Width="45%" />
+                    <Column Id="M-00FA_A-AE86-01-0000_PB-4_C-2" Name="BASE_Col2" Width="15%" />
+                    <Column Id="M-00FA_A-AE86-01-0000_PB-4_C-3" Name="BASE_Col3" Width="20%" />
+                  </Columns>
+                  <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-3" Text="  In Betrieb senden alle" Cell="1,1" />
+                  <!-- ParameterRefRef BASE_HeartbeatDelayTime 'Zeit'-->
+                  <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000005_R-100000501" Cell="1,2" />
+                  <!-- ParameterRefRef BASE_HeartbeatDelayBase 'Zeitbasis'-->
+                  <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000004_R-100000401" Cell="1,3" />
+                </ParameterBlock>
+                <!-- choose BASE_HeartbeatDelayTime 'Zeit'-->
+                <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000005_R-100000501">
+                  <when test="!=0">
+                    <!-- show heartbeat only if it is parametrized -->
+                    <!-- choose BASE_HeartbeatExtended 'Erweitertes "In Betrieb"'-->
+                    <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000037_R-100003701">
+                      <when test="0">
+                        <!-- ComObjectRefRef BASE_Heartbeat 'In Betrieb'-->
+                        <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-1_R-100000101" />
+                      </when>
+                      <when test="1">
+                        <!-- ComObjectRefRef BASE_Heartbeat 'In Betrieb'-->
+                        <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-1_R-100000102" />
+                      </when>
+                    </choose>
+                  </when>
+                </choose>
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-4" Text="Uhrzeit &amp; Datum" UIHint="Headline" />
+                <!-- choose BASE_InternalTime 'InternalTime'-->
+                <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000006_R-100000601">
+                  <when test="0">
+                    <!-- Combined Time/Date KO -->
+                    <!-- ParameterRefRef BASE_CombinedTimeDate 'Empfangen über'-->
+                    <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000156_R-100015601" HelpContext="BASE-Empfangen-ueber" IndentLevel="1" />
+                    <!-- choose BASE_CombinedTimeDate 'Empfangen über'-->
+                    <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000156_R-100015601">
+                      <when test="0">
+                        <!-- Time -->
+                        <!-- ComObjectRefRef BASE_Time 'Uhrzeit'-->
+                        <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-2_R-100000201" />
+                        <!-- Date -->
+                        <!-- ComObjectRefRef BASE_Date 'Datum'-->
+                        <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-3_R-100000301" />
+                      </when>
+                      <when test="1">
+                        <!-- Date-Time -->
+                        <!-- ComObjectRefRef BASE_Time 'Uhrzeit'-->
+                        <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-1000002_R-100000202" />
+                      </when>
+                    </choose>
+                    <!-- Read Time/Date on startup -->
+                    <!-- ParameterRefRef BASE_ReadTimeDate 'Bei Neustart vom Bus lesen'-->
+                    <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000034_R-100003401" HelpContext="BASE-Bei-Neustart-vom-Bus-lesen" IndentLevel="1" />
+                    <!-- ParameterRefRef BASE_Timezone 'Zeitzone'-->
+                    <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000144_R-100014401" HelpContext="BASE-Zeitzone" IndentLevel="1" />
+                    <!-- choose BASE_Timezone 'Zeitzone'-->
+                    <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000144_R-100014401">
+                      <!--  Timezone-->
+                      <when test="0 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28">
+                        <!-- Timezone is other than Germany -->
+                        <!-- choose BASE_CombinedTimeDate 'Empfangen über'-->
+                        <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000156_R-100015601">
+                          <when test="0">
+                            <!-- DPT19 not active -->
+                            <!-- ParameterRefRef BASE_SummertimeKO 'Sommerzeit ermitteln durch'-->
+                            <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000162_R-100016201" HelpContext="BASE-Sommerzeit-ermitteln-durch" IndentLevel="1" />
+                            <!-- choose BASE_SummertimeKO 'Sommerzeit ermitteln durch'-->
+                            <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000162_R-100016201">
+                              <when test="0">
+                                <!-- Summertime active? -->
+                                <!-- ComObjectRefRef BASE_IsSummertime 'Sommerzeit aktiv'-->
+                                <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-5_R-100001001" />
+                              </when>
+                            </choose>
+                          </when>
+                          <when test="1">
+                            <!-- DPT19 active -->
+                            <!-- ParameterRefRef BASE_SummertimeWorld 'Sommerzeit ermitteln durch'-->
+                            <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000161_R-100016101" HelpContext="BASE-Sommerzeit-ermitteln-durch" IndentLevel="1" />
+                            <!-- choose BASE_SummertimeWorld 'Sommerzeit ermitteln durch'-->
+                            <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000161_R-100016101">
+                              <when test="0">
+                                <!-- Summertime active? -->
+                                <!-- ComObjectRefRef BASE_IsSummertime 'Sommerzeit aktiv'-->
+                                <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-5_R-100001001" />
+                              </when>
+                            </choose>
+                          </when>
+                        </choose>
+                      </when>
+                      <when test="1 31">
+                        <!-- choose BASE_Timezone 'Zeitzone'-->
+                        <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000144_R-100014401">
+                          <!--  Timezone-->
+                          <when test="31">
+                            <!-- Timezone is Custom -->
+                            <!-- ParameterRefRef BASE_TimezoneCustom 'POSIX TZ-String'-->
+                            <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000175_R-100017501" HelpContext="BASE-POSIX-TZ-String" IndentLevel="2" />
+                          </when>
+                        </choose>
+                        <!-- Timezone is Germany or Custom -->
+                        <!-- choose BASE_CombinedTimeDate 'Empfangen über'-->
+                        <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000156_R-100015601">
+                          <when test="0">
+                            <!-- DPT19 not active -->
+                            <!-- ParameterRefRef BASE_SummertimeDE 'Sommerzeit ermitteln durch'-->
+                            <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000160_R-100016001" HelpContext="BASE-Sommerzeit-ermitteln-durch" IndentLevel="1" />
+                            <!-- choose BASE_SummertimeDE 'Sommerzeit ermitteln durch'-->
+                            <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000160_R-100016001">
+                              <when test="0">
+                                <!-- Summertime active? -->
+                                <!-- ComObjectRefRef BASE_IsSummertime 'Sommerzeit aktiv'-->
+                                <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-5_R-100001001" />
+                              </when>
+                              <!-- <when test="2">
+                                <ParameterSeparator Id="%AID%_PS-nnn" Text="Für Deutschland kann die Sommerzeit auch intern vom Logikmodul berechnet werden. Für alle anderen Länder (auch in der gleichen Zeitzone) sollte diese Einstellung nicht gewählt werden!" UIHint="Information" />
+                              </when> -->
+                            </choose>
+                          </when>
+                          <when test="1">
+                            <!-- ParameterRefRef BASE_SummertimeAll 'Sommerzeit ermitteln durch'-->
+                            <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000159_R-100015901" HelpContext="BASE-Sommerzeit-ermitteln-durch" IndentLevel="1" />
+                            <!-- choose BASE_SummertimeAll 'Sommerzeit ermitteln durch'-->
+                            <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000159_R-100015901">
+                              <when test="0">
+                                <!-- Summertime active? -->
+                                <!-- ComObjectRefRef BASE_IsSummertime 'Sommerzeit aktiv'-->
+                                <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-5_R-100001001" />
+                              </when>
+                              <!-- <when test="2">
+                                <ParameterSeparator Id="%AID%_PS-nnn" Text="Für Deutschland kann die Sommerzeit auch intern vom Logikmodul berechnet werden. Für alle anderen Länder (auch in der gleichen Zeitzone) sollte diese Einstellung nicht gewählt werden!" UIHint="Information" />
+                              </when> -->
+                            </choose>
+                          </when>
+                        </choose>
+                      </when>
+                    </choose>
+                  </when>
+                  <when test="1">
+                    <!-- ParameterRefRef BASE_Timezone 'Zeitzone'-->
+                    <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000144_R-100014401" HelpContext="BASE-Zeitzone" IndentLevel="1" />
+                    <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-5" Text="Die Zeit wird durch einen internen Zeitgeber verwaltet!" UIHint="Information" />
+                    <!-- Output Time -->
+                    <!-- ComObjectRefRef BASE_Time 'Uhrzeit'-->
+                    <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-2_R-100000203" />
+                    <!-- Output Date -->
+                    <!-- ComObjectRefRef BASE_Date 'Datum'-->
+                    <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-3_R-100000303" />
+                    <!-- Output DateTime -->
+                    <!-- ComObjectRefRef BASE_DateTime 'Uhrzeit/Datum'-->
+                    <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-4_R-100001203" />
+                    <!-- Output Summertime -->
+                    <!-- ComObjectRefRef BASE_IsSummertime 'Sommerzeit aktiv'-->
+                    <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-5_R-100001003" />
+                  </when>
+                </choose>
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-6" Text="Gerätestandort" UIHint="Headline" />
+                <!-- ParameterRefRef BASE_Latitude 'Breitengrad'-->
+                <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000142_R-100014201" HelpContext="BASE-Geraetestandort" IndentLevel="1" />
+                <!-- ParameterRefRef BASE_Longitude 'Längengrad'-->
+                <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000143_R-100014301" HelpContext="BASE-Geraetestandort" IndentLevel="1" />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-7" Text=" " />
+                <ParameterBlock Id="M-00FA_A-AE86-01-0000_PB-5" Name="BASE_OpenKNX" Inline="true" Layout="Grid">
+                  <Rows>
+                    <Row Id="M-00FA_A-AE86-01-0000_PB-5_R-1" Name="BASE_Row1" />
+                    <Row Id="M-00FA_A-AE86-01-0000_PB-5_R-2" Name="BASE_Row2" />
+                  </Rows>
+                  <Columns>
+                    <Column Id="M-00FA_A-AE86-01-0000_PB-5_C-1" Name="BASE_Col1" Width="100%" />
+                  </Columns>
+                  <!-- ParameterRefRef BASE_ETS 'ETS'-->
+                  <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-1000001_R-100000101" Cell="1,1" HelpContext="BASE-OpenKNX" />
+                </ParameterBlock>
+              </ParameterBlock>
+              <ParameterBlock Id="M-00FA_A-AE86-01-0000_PB-6" Name="BASE_Extended" Text="Erweitert" Icon="format-list-text" HelpContext="BASE-OpenKNX">
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-8" Text="Erweitert" UIHint="Headline" />
+                <!-- ParameterRefRef BASE_Watchdog 'Watchdog aktivieren'-->
+                <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000147_R-100014701" HelpContext="BASE-Watchdog-aktivieren" IndentLevel="1" />
+                <!-- ParameterRefRef BASE_Diagnose 'Diagnoseobjekt anzeigen'-->
+                <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000146_R-100014601" HelpContext="BASE-Diagnoseobjekt-anzeigen" IndentLevel="1" />
+                <!-- choose BASE_Diagnose 'Diagnoseobjekt anzeigen'-->
+                <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000146_R-100014601">
+                  <when test="1">
+                    <!-- show diagnose object just if requested -->
+                    <!-- ComObjectRefRef BASE_Diagnose 'Diagnose'-->
+                    <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-7_R-100000701" />
+                  </when>
+                </choose>
+                <!-- choose BASE_HeartbeatDelayTime 'Zeit'-->
+                <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000005_R-100000501">
+                  <when test="!=0">
+                    <!-- ParameterRefRef BASE_HeartbeatExtended 'Erweitertes "In Betrieb"'-->
+                    <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000037_R-100003701" HelpContext="BASE-Erweitertes-In-Betrieb" IndentLevel="1" />
+                  </when>
+                </choose>
+                <!-- Extendend save -->
+                <!-- choose BASE_SelectHelper ''-->
+                <choose ParamRefId="M-00FA_A-AE86-01-0000_P-1000099_R-100009901">
+                  <when test="!=1">
+                    <!-- ParameterRefRef BASE_ExtendedSave 'Erweitertes Speichern'-->
+                    <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-1000011_R-100001101" HelpContext="BASE-Erweitertes-Speichern" IndentLevel="1" />
+                    <!-- choose BASE_ExtendedSave 'Erweitertes Speichern'-->
+                    <choose ParamRefId="M-00FA_A-AE86-01-0000_P-1000011_R-100001101">
+                      <when test="1">
+                        <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-9" Text="Erweitertes Speichern" UIHint="Headline" />
+                        <!-- ParameterRefRef BASE_PeriodicSave 'Zyklisches speichern'-->
+                        <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000090_R-100009001" HelpContext="BASE-Erweitertes-Speichern" IndentLevel="1" />
+                        <!-- ParameterRefRef BASE_ManualSave 'Manuelles speichern'-->
+                        <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_UP-1000091_R-100009101" HelpContext="BASE-Erweitertes-Speichern" IndentLevel="1" />
+                        <!-- choose BASE_ManualSave 'Manuelles speichern'-->
+                        <choose ParamRefId="M-00FA_A-AE86-01-0000_UP-1000091_R-100009101">
+                          <when test="&gt;0">
+                            <!-- ComObjectRefRef BASE_ManualSave 'Speichern'-->
+                            <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-6_R-100001101" />
+                          </when>
+                        </choose>
+                        <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-10" Text="Wichtig: Vor der Nutzung der erweiterten Speichermöglichkeiten sollte unbedingt die Hilfe konsultiert werden. Diese ist kontextsensitiv auf den jeweiligen Feldern hinterlegt. " UIHint="Information" />
+                      </when>
+                    </choose>
+                  </when>
+                </choose>
+              </ParameterBlock>
+              <ParameterBlock Id="M-00FA_A-AE86-01-0000_PB-7" Name="BASE_Docu" Text="Hilfe" Icon="help-circle-outline" HelpContext="BASE-OpenKNX">
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-11" Text="Dokumentation" UIHint="Headline" />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-12" Text="Die Dokumentation ist als Kontextsensitive Hilfe verfügbar, siehe den Text im unteren Bereich des Bildschirms." />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-13" Text="Wird keine Dokumentation angezeigt, muss diese in der ETS Werkzeugleiste über die Schaltfläche&#xA;'(?) Kontexhilfe' aktiviert werden." />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-14" Text="" UIHint="HorizontalRuler" />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-15" Text="ETS Tipp" UIHint="Headline" />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-16" Text="Benötigen mehrere Kanäle die gleiche Konfigurationen, können mit gedrückter STRG Taste die jeweils gleichen Seiten mit der Maus ausgewählt werden." />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-17" Text="Die vorgenommen Konfigurationen werden dann auf alle gewählten Kanäle übernommen." />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-18" Text="" UIHint="HorizontalRuler" />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-19" Text="Verwendung von Open Source" UIHint="Headline" />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-20" Text="OpenKNX verwendet für die Sonnenstandsberechnung den PSA Algorithmus welcher unter der CC BY 4.0 Lizenz veröffentlich wurde." />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-21" Text="Mehr Information dazu sind unter https://www.sciencedirect.com/science/article/pii/S0038092X20311488?via%3Dihub zu finden." />
+              </ParameterBlock>
+            </Channel>
+            <ChannelIndependentBlock>
+              <!-- A parameter block represents a tab on the left side, showing a page full of parameters -->
+              <!-- A tab page with general settings -->
+              <ParameterBlock Id="M-00FA_A-AE86-01-0000_PB-8" Name="FAN_General" Text="Allgemein">
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-22" Text="Lüftermodul" UIHint="Headline" />
+                <!--Replaced %ModuleVersion% by '0.1'-->
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-23" Text="Version: 0.1" />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-24" Text="" UIHint="HorizontalRuler" />
+                <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-25" Text="Kanalauswahl" UIHint="Headline" />
+                <!-- ParameterRefRef FAN_FanOne 'Lüfter 1'-->
+                <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9900001_R-990000101" />
+                <!-- ParameterRefRef FAN_FanTwo 'Lüfter 2'-->
+                <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9900002_R-990000201" />
+              </ParameterBlock>
+            </ChannelIndependentBlock>
+            <Channel Id="M-00FA_A-AE86-01-0000_CH-FAN" Name="FAN_Fan1" Number="FAN" Text="Lüfter 1">
+              <!-- This is a tab within a channel -->
+              <ParameterBlock Id="M-00FA_A-AE86-01-0000_PB-9" Name="FAN_Settings" Text="Einstellungen">
+                <!-- ParameterRefRef FAN_Fan1Text 'Bezeichnung des 1. Lüfters'-->
+                <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9900003_R-990000301" />
+                <ParameterBlock Id="M-00FA_A-AE86-01-0000_PB-01-10" Name="FAN_Settings" Text="Einstellungen">
+                  <!-- ComObjectRefRef FAN_CH1_Level '{{0:Eingang}}'-->
+                  <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-16_R-990100501" />
+                  <!-- Stufe -->
+                  <!-- ComObjectRefRef FAN_CH1_LevelFeedback '{{0:Ausgang}}'-->
+                  <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-20_R-990100901" />
+                  <!-- Stufe Feedback -->
+                  <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-26" Text="Timerkonfiguration" UIHint="Headline" />
+                  <!-- ParameterRefRef FAN_CH1_TimerSelection 'Laufzeitauswahl'-->
+                  <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9901006_R-990100601" />
+                  <!-- ComObjectRefRef FAN_CH1_TimerSelection '{{0:Eingang}}'-->
+                  <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-19_R-990100801" />
+                  <!-- Timerkonfiguration -->
+                  <!-- ComObjectRefRef FAN_CH1_TimerFeedback '{{0:Ausgang}}'-->
+                  <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-23_R-990101201" />
+                  <!-- Timerfeedback -->
+                  <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-27" Text="" UIHint="HorizontalRuler" />
+                  <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-28" Text="Automatikkonfiguration" UIHint="Headline" />
+                  <!-- ParameterRefRef FAN_CH1_OpMode 'Betriebsmodus'-->
+                  <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9901001_R-990100101" />
+                  <!-- Betriebsmodus -->
+                  <!-- choose FAN_CH1_OpMode 'Betriebsmodus'-->
+                  <choose ParamRefId="M-00FA_A-AE86-01-0000_P-9901001_R-990100101">
+                    <when test="3">
+                      <!-- ComObjectRefRef FAN_CH1_OpMode '{{0:Eingang}}'-->
+                      <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-17_R-990100601" />
+                      <!-- KO Betriebsmodus, falls Auswahl durch KO selektiert -->
+                      <!-- ComObjectRefRef FAN_CH1_OpModeFeedback '{{0:Ausgang}}'-->
+                      <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-21_R-990101001" />
+                      <!-- KO Betriebsmodus Feedback-->
+                    </when>
+                  </choose>
+                  <!-- choose FAN_CH1_OpMode 'Betriebsmodus'-->
+                  <choose ParamRefId="M-00FA_A-AE86-01-0000_P-9901001_R-990100101">
+                    <!-- Falls Automatik-Betriebsmodus oder Auswahl durch KO -->
+                    <when test="&gt;1">
+                      <!-- ParameterRefRef FAN_CH1_HumSensMode 'Luftfeuchtemessung'-->
+                      <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9901005_R-990100501" />
+                      <!-- Luftfeuchtemessung -->
+                      <!-- ComObjectRefRef FAN_CH1_HumidityInside '{{0:Eingang}}'-->
+                      <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-12_R-990100101" />
+                      <!-- KO Luftfeuchte innen-->
+                      <!-- choose FAN_CH1_HumSensMode 'Luftfeuchtemessung'-->
+                      <choose ParamRefId="M-00FA_A-AE86-01-0000_P-9901005_R-990100501">
+                        <when test="2">
+                          <!-- ComObjectRefRef FAN_CH1_TemperatureInside '{{0:Eingang}}'-->
+                          <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-13_R-990100201" />
+                          <!-- KO Temp innen, falls Auswahl durch KO selektiert -->
+                          <!-- ComObjectRefRef FAN_CH1_HumidityOutside '{{0:Eingang}}'-->
+                          <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-14_R-990100301" />
+                          <!-- KO Luftfeuchte außen, falls Auswahl durch KO selektiert -->
+                          <!-- ComObjectRefRef FAN_CH1_TemperatureOutside '{{0:Eingang}}'-->
+                          <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-15_R-990100401" />
+                          <!-- KO Temperatur außen, falls Auswahl durch KO selektiert -->
+                        </when>
+                      </choose>
+                      <!-- ParameterRefRef FAN_CH1_AutoMode 'Steuerungsmodus'-->
+                      <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9901003_R-990100301" />
+                      <!-- Steuerungsmodus -->
+                      <!-- ParameterRefRef FAN_CH1_VentMode 'Lüftungsmodus'-->
+                      <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9901004_R-990100401" />
+                      <!-- Lüftungsmodus -->
+                      <!-- choose FAN_CH1_VentMode 'Lüftungsmodus'-->
+                      <choose ParamRefId="M-00FA_A-AE86-01-0000_P-9901004_R-990100401">
+                        <when test="4">
+                          <!-- ComObjectRefRef FAN_CH1_VentMode '{{0:Eingang}}'-->
+                          <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-18_R-990100701" />
+                          <!-- KO Lüftungsmodus, falls Auswahl durch KO selektiert -->
+                          <!-- ComObjectRefRef FAN_CH1_VentModeFeedback '{{0:Ausgang}}'-->
+                          <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-22_R-990101101" />
+                          <!-- KO Lüftungsmodus Feedback-->
+                        </when>
+                      </choose>
+                    </when>
+                  </choose>
+                </ParameterBlock>
+                <ParameterBlock Id="M-00FA_A-AE86-01-0000_PB-02-11" Name="FAN_Settings" Text="Einstellungen">
+                  <!-- ComObjectRefRef FAN_CH2_Level '{{0:Eingang}}'-->
+                  <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-28_R-990200501" />
+                  <!-- Stufe -->
+                  <!-- ComObjectRefRef FAN_CH2_LevelFeedback '{{0:Ausgang}}'-->
+                  <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-32_R-990200901" />
+                  <!-- Stufe Feedback -->
+                  <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-29" Text="Timerkonfiguration" UIHint="Headline" />
+                  <!-- ParameterRefRef FAN_CH2_TimerSelection 'Laufzeitauswahl'-->
+                  <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9902006_R-990200601" />
+                  <!-- ComObjectRefRef FAN_CH2_TimerSelection '{{0:Eingang}}'-->
+                  <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-31_R-990200801" />
+                  <!-- Timerkonfiguration -->
+                  <!-- ComObjectRefRef FAN_CH2_TimerFeedback '{{0:Ausgang}}'-->
+                  <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-35_R-990201201" />
+                  <!-- Timerfeedback -->
+                  <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-30" Text="" UIHint="HorizontalRuler" />
+                  <ParameterSeparator Id="M-00FA_A-AE86-01-0000_PS-31" Text="Automatikkonfiguration" UIHint="Headline" />
+                  <!-- ParameterRefRef FAN_CH2_OpMode 'Betriebsmodus'-->
+                  <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9902001_R-990200101" />
+                  <!-- Betriebsmodus -->
+                  <!-- choose FAN_CH2_OpMode 'Betriebsmodus'-->
+                  <choose ParamRefId="M-00FA_A-AE86-01-0000_P-9902001_R-990200101">
+                    <when test="3">
+                      <!-- ComObjectRefRef FAN_CH2_OpMode '{{0:Eingang}}'-->
+                      <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-29_R-990200601" />
+                      <!-- KO Betriebsmodus, falls Auswahl durch KO selektiert -->
+                      <!-- ComObjectRefRef FAN_CH2_OpModeFeedback '{{0:Ausgang}}'-->
+                      <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-33_R-990201001" />
+                      <!-- KO Betriebsmodus Feedback-->
+                    </when>
+                  </choose>
+                  <!-- choose FAN_CH2_OpMode 'Betriebsmodus'-->
+                  <choose ParamRefId="M-00FA_A-AE86-01-0000_P-9902001_R-990200101">
+                    <!-- Falls Automatik-Betriebsmodus oder Auswahl durch KO -->
+                    <when test="&gt;1">
+                      <!-- ParameterRefRef FAN_CH2_HumSensMode 'Luftfeuchtemessung'-->
+                      <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9902005_R-990200501" />
+                      <!-- Luftfeuchtemessung -->
+                      <!-- ComObjectRefRef FAN_CH2_HumidityInside '{{0:Eingang}}'-->
+                      <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-24_R-990200101" />
+                      <!-- KO Luftfeuchte innen-->
+                      <!-- choose FAN_CH2_HumSensMode 'Luftfeuchtemessung'-->
+                      <choose ParamRefId="M-00FA_A-AE86-01-0000_P-9902005_R-990200501">
+                        <when test="2">
+                          <!-- ComObjectRefRef FAN_CH2_TemperatureInside '{{0:Eingang}}'-->
+                          <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-25_R-990200201" />
+                          <!-- KO Temp innen, falls Auswahl durch KO selektiert -->
+                          <!-- ComObjectRefRef FAN_CH2_HumidityOutside '{{0:Eingang}}'-->
+                          <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-26_R-990200301" />
+                          <!-- KO Luftfeuchte außen, falls Auswahl durch KO selektiert -->
+                          <!-- ComObjectRefRef FAN_CH2_TemperatureOutside '{{0:Eingang}}'-->
+                          <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-27_R-990200401" />
+                          <!-- KO Temperatur außen, falls Auswahl durch KO selektiert -->
+                        </when>
+                      </choose>
+                      <!-- ParameterRefRef FAN_CH2_AutoMode 'Steuerungsmodus'-->
+                      <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9902003_R-990200301" />
+                      <!-- Steuerungsmodus -->
+                      <!-- ParameterRefRef FAN_CH2_VentMode 'Lüftungsmodus'-->
+                      <ParameterRefRef RefId="M-00FA_A-AE86-01-0000_P-9902004_R-990200401" />
+                      <!-- Lüftungsmodus -->
+                      <!-- choose FAN_CH2_VentMode 'Lüftungsmodus'-->
+                      <choose ParamRefId="M-00FA_A-AE86-01-0000_P-9902004_R-990200401">
+                        <when test="4">
+                          <!-- ComObjectRefRef FAN_CH2_VentMode '{{0:Eingang}}'-->
+                          <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-30_R-990200701" />
+                          <!-- KO Lüftungsmodus, falls Auswahl durch KO selektiert -->
+                          <!-- ComObjectRefRef FAN_CH2_VentModeFeedback '{{0:Ausgang}}'-->
+                          <ComObjectRefRef RefId="M-00FA_A-AE86-01-0000_O-34_R-990201101" />
+                          <!-- KO Lüftungsmodus Feedback-->
+                        </when>
+                      </choose>
+                    </when>
+                  </choose>
+                </ParameterBlock>
+              </ParameterBlock>
+            </Channel>
+          </Dynamic>
+        </ApplicationProgram>
+      </ApplicationPrograms>
+      <Baggages>
+        <Baggage TargetPath="AE\86\01" Name="ets.png" Id="M-00FA_BG-AE.2F86.2F01-ets.2Epng">
+          <FileInfo TimeInfo="2025-11-05T23:25:12.6507170Z" />
+        </Baggage>
+        <Baggage TargetPath="AE\86\01" Name="Help_de.zip" Id="M-00FA_BG-AE.2F86.2F01-Help.5Fde.2Ezip">
+          <FileInfo TimeInfo="2025-11-05T23:25:12.7715409Z" />
+        </Baggage>
+        <Baggage TargetPath="AE\86\01" Name="Icons.zip" Id="M-00FA_BG-AE.2F86.2F01-Icons.2Ezip">
+          <FileInfo TimeInfo="2025-11-05T23:25:12.8797699Z" />
+        </Baggage>
+      </Baggages>
+      <Hardware>
+        <Hardware Id="M-00FA_H-0xAE86-1" Name="OpenKNX-Ventilation Fan KNX Adapter-dev" SerialNumber="0xAE86" VersionNumber="1" BusCurrent="30" HasIndividualAddress="true" HasApplicationProgram="true">
+          <Products>
+            <Product Id="M-00FA_H-0xAE86-1_P-OpenKnxFanDev" Text="OpenKNX: Ventilation Fan KNX Adapter (Dev)" OrderNumber="OpenKnxFanDev" IsRailMounted="true" DefaultLanguage="de-DE">
+              <RegistrationInfo RegistrationStatus="Registered" />
+            </Product>
+          </Products>
+          <Hardware2Programs>
+            <Hardware2Program Id="M-00FA_H-0xAE86-1_HP-AE86-01-0000" MediumTypes="MT-0">
+              <ApplicationProgramRef RefId="M-00FA_A-AE86-01-0000" />
+              <RegistrationInfo RegistrationStatus="Registered" RegistrationNumber="0001/11" />
+            </Hardware2Program>
+          </Hardware2Programs>
+        </Hardware>
+      </Hardware>
+    </Manufacturer>
+  </ManufacturerData>
+</KNX>
