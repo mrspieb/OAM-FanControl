@@ -6,7 +6,7 @@
   <op:config name="%BASE_ManualSave%" value="3" />
 
   <op:ETS ProductName="Ventilation Fan KNX Adapter"
-    OpenKnxId="0xAE"
+    OpenKnxId="0xAF"
     ApplicationNumber="0x86"
     ApplicationVersion="%ReleaseApplicationVersion%"
     ReplacesVersions="%ReleaseReplacesVersions%"
@@ -29,7 +29,7 @@
     template="../lib/OFM-FanControl/src/Fan.templ.xml"
     NumChannels="2"
     KoSingleOffset="20"
-    KoOffset="12"
+    KoOffset="20"
     >
     <op:verify File="../lib/OFM-FanControl/library.json" ModuleVersion="%ReleaseApplicationVersion%" />
   </op:define>
